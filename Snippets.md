@@ -1,7 +1,17 @@
 ##Ajax
 POST
 ```javascript
-test
+$("#promotion_code").on('change keypress paste focus textInput input',function(){
+   var code = document.getElementById("promotion_code").value;
+   $.ajax({
+       type: "POST",
+       url: "{% url 'product_app.check_out_views.check_promotion_code' %}",
+       data: {"code": code}
+   })
+      .done(function(data) {
+          document.getElementById("promo_code_test").innerHTML = data;
+      });
+});
 ```
 
 GET
@@ -16,9 +26,9 @@ The jQuery library provides loading functionality in one line
 
 ```javascript
 $.getScript("my_lovely_script.js", function(){
-
    alert("Script loaded and executed.");
-
-   // Use anything defined in the loaded script...
 });
 ```
+
+##Notice
+JavaScript is Prototypical Langauge rather than Object Oriented Language.

@@ -1,6 +1,9 @@
 /**
  * Created by Danyang on 2/2/2015.
  */
+
+function DomUtils() {}
+
 /**
  * To get all elements in a page with a certain class attribute.
  * http://www.blackbam.at/blackbams-blog/2011/07/01/my-todays-top-10-most-useful-javascript-functions/
@@ -8,40 +11,43 @@
  * @param node
  * @returns {Array}
  */
-function getElementsByClassName(classname, node){
+DomUtils.getElementsByClassName = function(classname, node){
+    "use strict";
     if (!node) {
         node = document.getElementsByTagName('body')[0];
     }
 
     var a = [], re = new RegExp('\\b' + classname + '\\b');
-    els = node.getElementsByTagName('*');
+    var els = node.getElementsByTagName('*');
     for (var i = 0, j = els.length; i < j; i++) {
         if (re.test(els[i].className)) {
             a.push(els[i]);
         }
     }
     return a;
-}
+};
 
 /**
  * Test if a String is not empty
  * @param s
  * @returns {boolean}
  */
-function isNonblank (s) {
+DomUtils.isNonblank = function(s) {
+    "use strict";
     var bpat    = /\S/;
-    return String (s).search (bpat) != -1
-}
+    return String (s).search (bpat) !== -1;
+};
 
 /**
  * Get scroll width/height of page visitors' browser window
  * A browser-safe way to get the number of pixels, which a user scrolled down the webpage currently.
  * @returns {*[]}
  */
-function getScrollXY() {
+DomUtils.getScrollXY = function() {
+    "use strict";
     var scrOfX = 0, scrOfY = 0;
 
-    if( typeof( window.pageYOffset ) == 'number' ) {
+    if( typeof( window.pageYOffset ) === 'number' ) {
         //Netscape compliant
         scrOfY = window.pageYOffset;
         scrOfX = window.pageXOffset;
@@ -55,17 +61,18 @@ function getScrollXY() {
         scrOfX = document.documentElement.scrollLeft;
     }
     return [ scrOfX, scrOfY ];
-}
+};
 
 /**
  * Get current size of page visitors' browser window
  * A browser-safe way to get the window height and window width of the current viewers browser in pixels.
  * @returns {*[]}
  */
-function getWindowSize() {
+DomUtils.getWindowSize = function() {
+    "use strict";
     var myWidth = 0, myHeight = 0;
 
-    if( typeof( window.innerWidth ) == 'number' ) {
+    if( typeof( window.innerWidth ) === 'number' ) {
         //Non-IE
         myWidth = window.innerWidth;
         myHeight = window.innerHeight;
@@ -79,7 +86,7 @@ function getWindowSize() {
         myHeight = document.body.clientHeight;
     }
     return [ myWidth, myHeight ];
-}
+};
 
 /**
  * Print Javascript Array
@@ -89,29 +96,31 @@ function getWindowSize() {
  * @param level
  * @returns {string}
  */
-function dump(arr,level) {
+DomUtils.dump = function(arr,level) {
+    "use strict";
     var dumped_text = "";
-    if(!level)
+    if(!level) {
         level = 0;
-
+    }
     //The padding given at the beginning of the line.
     var level_padding = "";
-    for(var j=0;j<level+1;j++)
+    for(var j=0;j<level+1;j++) {
         level_padding += "    ";
-
-    if(typeof(arr) == 'object') { //Array/Hashes/Objects
+    }
+    if(typeof(arr) === 'object') { //Array/Hashes/Objects
         for(var item in arr) {
-            var value = arr[item];
-
-            if(typeof(value) == 'object') { //If it is an array,
-                dumped_text += level_padding + "'" + item + "' ...\n";
-                dumped_text += dump(value,level+1);
-            } else {
-                dumped_text += level_padding + "'" + item + "' => \"" + value + "\"\n";
+            if(arr.hasOwnProperty(item)) {
+                var value = arr[item];
+                if(typeof(value) === 'object') { //If it is an array,
+                    dumped_text += level_padding + "'" + item + "' ...\n";
+                    dumped_text += DomUtils.dump(value,level+1);
+                } else {
+                    dumped_text += level_padding + "'" + item + "' => \"" + value + "\"\n";
+                }
             }
         }
     } else { //Stings/Chars/Numbers etc.
         dumped_text = "===>"+arr+"<===("+typeof(arr)+")";
     }
     return dumped_text;
-}
+};
