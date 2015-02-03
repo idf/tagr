@@ -213,7 +213,6 @@ pip-log.txt
 #Mr Developer
 .mr.developer.cfg
 log/
-angularjs/introduction/data/
 # python byte code
 *.pyc
 
