@@ -7,6 +7,7 @@ Common utilities for JavaScript
 
 ##Friends
 JSHint (JetBrain built-in)
+Bower for package management
 
 ##Best Folder Structure
 [ref](http://requirejs.org/docs/api.html)

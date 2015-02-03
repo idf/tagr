@@ -2,50 +2,32 @@
 <html ng-app="gemStore">
     <head>
         <link rel="stylesheet" type="text/css" href="/bower_components/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/form-validation.css" />
         <script type="text/javascript" src="/bower_components/angularjs/angular.min.js"></script>
-        <script type="text/javascript" src="js/basics.js"></script>
+        <script type="text/javascript" src="js/products.js"></script>
+        <script type="text/javascript" src="js/app.js"></script>
     </head>
-    <body class="list-group" ng-controller="StoreController as store">
-    <header>
-        <h1 class="text-center">Flatlander Crafted Gems</h1>
-        <h2 class="text-center">– an Angular store –</h2>
-    </header>
-    <div class="list-group-item" ng-repeat="product in store.products">
-        <h3>
-            {{product.name}}
-            <em class="pull-right">{{product.price | currency}}</em>
-        </h3>
-        <section ng-show="product.images.length">
-            <img ng-src="{{product.images[0]}}" />
-            <ul class="list-inline thumbs">
-                <li class="thumbnail" ng-repeat="image in product.images">
-                    <img ng-src="{{image}}" />
-                </li>
-            </ul>
-        </section>
 
-        <section class="tab" ng-controller="TabController as panel">
-            <ul class="nav nav-pills">
-                <li ng-class="{active: panel.isSet(1)}">
-                    <a href ng-click="panel.setTab(1)">Description</a></li>
-                <li ng-class="{active: panel.isSet(2)}">
-                    <a href ng-click="panel.setTab(2)">Specs</a></li>
-                <li ng-class="{active: panel.isSet(3)}">
-                    <a href ng-click="panel.setTab(3)">Reviews</a></li>
-            </ul>
-            <div ng-show="panel.isSet(1)">
-                <h4>Description</h4>
-                <blockquote>{{ product.description }}</blockquote>
+    <body ng-controller="StoreController as store">
+        <!--  Store Header  -->
+        <header>
+            <h1 class="text-center">Flatlander Crafted Gems</h1>
+            <h2 class="text-center">– an Angular store –</h2>
+        </header>
+
+        <!--  Products Container  -->
+        <div class="list-group">
+            <!--  Product Container  -->
+            <div class="list-group-item" ng-repeat="product in store.products">
+                <h3>{{product.name}} <em class="pull-right">{{product.price | currency}}</em></h3>
+
+                <!-- Image Gallery  -->
+                <product-gallery></product-gallery>
+
+                <!-- Product Tabs  -->
+                <product-tabs></product-tabs>
             </div>
-            <div ng-show="panel.isSet(2)">
-                <h4>Specs</h4>
-                <blockquote>Shine: {{ product.shine }} </blockquote>
-            </div>
-            <div ng-show="panel.isSet(3)">
-                <h4>Reviews</h4>
-                <blockquote></blockquote>
-            </div>
-        </section>
-    </div>
+
+        </div>
     </body>
 </html>
