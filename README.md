@@ -2,12 +2,13 @@
 Common utilities for JavaScript
 
 ##Dependencies
+* AngularJS
 * JQuery
 * JQuery-UI
 
 ##Friends
-JSHint (JetBrain built-in)
-Bower for package management
+* [JSHint](http://jshint.com/) (JetBrain built-in)  
+* [Bower](http://bower.io/) for package management
 
 ##Best Folder Structure
 [ref](http://requirejs.org/docs/api.html)
