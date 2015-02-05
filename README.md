@@ -1,4 +1,4 @@
-# Commons Util Js() {
+# Common JavaScript Utils() {
 Common utilities for JavaScript
 
 ##Dependencies
@@ -13,7 +13,7 @@ Common utilities for JavaScript
 ###JSHint
 JetBrains configuration - opt for using config files `.jshintrc`.
 
-##Best Folder Structure
+##Best Practice for JS Folder Structure
 [ref](http://requirejs.org/docs/api.html)
 ```
 www/
@@ -41,6 +41,6 @@ www/
 ```
 ## Functions
 * Prefer function delectation than anonymous function (function expression), because of facilitation of hoisting.
-* Prefer anonymou function to be one-line. 
+* Prefer anonymous function to be one-line.
 
 # };
