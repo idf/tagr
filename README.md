@@ -1,4 +1,4 @@
-# commons-util-js
+# Commons Util Js() {
 Common utilities for JavaScript
 
 ##Dependencies
@@ -24,3 +24,5 @@ www/
         app.js
         require.js
 ```
+
+# };
