@@ -5,31 +5,15 @@
     "use strict";
     /**
      * Module
-     * Module dependencies: 'store-directives'
+     * Module dependencies: ''
      * @type {module}
      */
-    var app = angular.module('gemStore', ['store-directives']);
+    angular.module('app', [
+        /* Shared Modules */
+        'filters',
 
-    /**
-     * Data load controller
-     * Dependency Injection $http
-     */
-    app.controller('StoreController', ["$http", function($http){
-        var store = this;
-        store.products = [];
-        $http.get("data/store-products.json").success(function(data){
-            store.products = data;
-        });
-    }]);
-
-    /**
-     * submission review handler
-     */
-    app.controller('ReviewController', function() {
-        this.review = {};
-        this.addReview = function(product) {
-            product.reviews.push(this.review);
-            this.review = {};
-        };
-    });
+        /* Feature ares */
+        'app.controllers',
+        'app.directives'
+    ]);
 })();
