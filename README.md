@@ -7,8 +7,11 @@ Common utilities for JavaScript
 * JQuery-UI
 
 ##Friends
-* [JSHint](http://jshint.com/) (JetBrain built-in)  
+* [JSHint](http://jshint.com/) for code quality
 * [Bower](http://bower.io/) for package management
+
+###JSHint
+JetBrains configuration. `.jshintrc` 
 
 ##Best Folder Structure
 [ref](http://requirejs.org/docs/api.html)

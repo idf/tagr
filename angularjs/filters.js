@@ -6,6 +6,7 @@
     var app = angular.module('filters', []);
 
     /**
+     * Aovid auto escapte of html
      * Working with:
      * <div ng-bind-html="something_with_html_tags | sanitize"></div>
      */
