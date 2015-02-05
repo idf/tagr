@@ -1,6 +1,6 @@
 # Common JavaScript Utils() {
-Common utilities for JavaScript
-
+Common utilities for JavaScript.  
+This is Noah's Ark for [Atwood's Law](http://blog.codinghorror.com/the-principle-of-least-power/): any application that can be written in JavaScript, will eventually be written in JavaScript. :joy:
 ##Dependencies
 * AngularJS
 * JQuery
