@@ -1,6 +1,6 @@
 # Common JavaScript Utils() {
 Common utilities for JavaScript.  
-This is Noah's Ark for [Atwood's Law](http://blog.codinghorror.com/the-principle-of-least-power/): any application that can be written in JavaScript, will eventually be written in JavaScript. :joy:
+This is Noah's Ark for [Atwood's Law](http://blog.codinghorror.com/the-principle-of-least-power/): "any application that can be written in JavaScript, will eventually be written in JavaScript." :joy:
 ##Dependencies
 * AngularJS
 * JQuery
@@ -43,10 +43,7 @@ www/
 * Prefer function delectation than anonymous function (function expression), because of facilitation of hoisting.
 * Prefer anonymous function to be one-line.
 
-# };
-
-
-#CSS/JS Dependencies
+##CSS/JS Dependencies
 Do not commit 3rd party/ventor CSS/JS. Use bower.json to update dependencies instead
 Initialize bower
 ```bash
@@ -56,3 +53,5 @@ Update dependencies:
 ```bash
 bower update
 ```
+
+# };
