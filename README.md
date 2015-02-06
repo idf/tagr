@@ -1,10 +1,24 @@
 # Common JavaScript Utils() {
 Common utilities for JavaScript.  
 This is Noah's Ark for [Atwood's Law](http://blog.codinghorror.com/the-principle-of-least-power/): "any application that can be written in JavaScript, will eventually be written in JavaScript." :joy:
-##Dependencies
-* AngularJS
+
+
+##Installations
+###Common Utils for Everything
+```html
+<script type="text/javascript" src="/js/commons-util-js/DomUtils.js"></script>
+<script type="text/javascript" src="/js/commons-util-js/PrimitiveExtensions.js"></script>
+```
+####Dependencies
 * JQuery
 * JQuery-UI
+
+###Common Utils for AngularJS
+```html
+<script type="text/javascript" src="/js/commons-util-js/angularjs/filters.js"></script>
+```
+####Dependencies
+* AngularJS
 
 ##Friends
 * [JSHint](http://jshint.com/) for code quality.
