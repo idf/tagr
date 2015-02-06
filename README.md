@@ -44,3 +44,15 @@ www/
 * Prefer anonymous function to be one-line.
 
 # };
+
+
+#CSS/JS Dependencies
+Do not commit 3rd party/ventor CSS/JS. Use bower.json to update dependencies instead
+Initialize bower
+```bash
+bower init
+```
+Update dependencies:
+```bash
+bower update
+```

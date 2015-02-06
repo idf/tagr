@@ -12,7 +12,7 @@ function DomUtils() {}
  * @returns {Array}
  */
 DomUtils.getElementsByClassName = function(classname, node){
-    "use strict";
+    'use strict';
     if (!node) {
         node = document.getElementsByTagName('body')[0];
     }
@@ -33,7 +33,7 @@ DomUtils.getElementsByClassName = function(classname, node){
  * @returns {boolean}
  */
 DomUtils.isNonblank = function(s) {
-    "use strict";
+    'use strict';
     var bpat    = /\S/;
     return String (s).search (bpat) !== -1;
 };
@@ -44,7 +44,7 @@ DomUtils.isNonblank = function(s) {
  * @returns {*[]}
  */
 DomUtils.getScrollXY = function() {
-    "use strict";
+    'use strict';
     var scrOfX = 0, scrOfY = 0;
 
     if( typeof( window.pageYOffset ) === 'number' ) {
@@ -69,7 +69,7 @@ DomUtils.getScrollXY = function() {
  * @returns {*[]}
  */
 DomUtils.getWindowSize = function() {
-    "use strict";
+    'use strict';
     var myWidth = 0, myHeight = 0;
 
     if( typeof( window.innerWidth ) === 'number' ) {
@@ -97,30 +97,30 @@ DomUtils.getWindowSize = function() {
  * @returns {string}
  */
 DomUtils.dump = function(arr,level) {
-    "use strict";
-    var dumped_text = "";
+    'use strict';
+    var dumped_text = '';
     if(!level) {
         level = 0;
     }
     //The padding given at the beginning of the line.
-    var level_padding = "";
+    var level_padding = '';
     for(var j=0;j<level+1;j++) {
-        level_padding += "    ";
+        level_padding += '    ';
     }
     if(typeof(arr) === 'object') { //Array/Hashes/Objects
         for(var item in arr) {
             if(arr.hasOwnProperty(item)) {
                 var value = arr[item];
                 if(typeof(value) === 'object') { //If it is an array,
-                    dumped_text += level_padding + "'" + item + "' ...\n";
+                    dumped_text += level_padding + '\'' + item + '\' ...\n';
                     dumped_text += DomUtils.dump(value,level+1);
                 } else {
-                    dumped_text += level_padding + "'" + item + "' => \"" + value + "\"\n";
+                    dumped_text += level_padding + '\'' + item + '\' => \'' + value + '\'\n';
                 }
             }
         }
     } else { //Stings/Chars/Numbers etc.
-        dumped_text = "===>"+arr+"<===("+typeof(arr)+")";
+        dumped_text = '===>'+arr+'<===('+typeof(arr)+')';
     }
     return dumped_text;
 };
