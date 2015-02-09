@@ -28,18 +28,12 @@ $.getScript("my_lovely_script.js", function(){
 ```
 
 ##Jsonp
-To avoid CORS, inject JavaScript into html and request json rather than requesting json directly.  
+To avoid CORS, inject JavaScript into html and request json rather than requesting json directly.
 Use `&callback=JSON_CALLBACK` to treat `$http.jsonp()` as `$http.json()`
 ```javascript
-$http.jsonp(INST_API_URL+"/locations/search"+
-    "?access_token="+oauthService.getAccessToken()+
-    "&lat="+geocode.lat+
-    "&lng="+geocode.lng+
-    "&distance=1000"+
+$http.jsonp(INST_API_URL+...+
     "&callback=JSON_CALLBACK").success(function(data) {
         var geoid = data;
-        // console.log("instLocSearch: ");
-        // console.log(geoid);
         recentMedia(geoid, Math.floor(query.time/1000), query.hour, flag);  // UNIX stamp
     });
 ```
