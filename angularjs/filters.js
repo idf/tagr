@@ -6,8 +6,9 @@
     var app = angular.module('filters', []);
 
     /**
-     * Aovid auto escapte of html
-     * Working with:
+     * Avoid auto escape of html
+     *
+     * Usage:
      * <div ng-bind-html="something_with_html_tags | sanitize"></div>
      */
     app.filter("sanitize", ['$sce', function($sce) {
@@ -15,4 +16,10 @@
             return $sce.trustAsHtml(htmlCode);
         };
     }]);
+
+    app.filter("reverse", function() {
+       return function(text) {
+           return text.split("").reverse().join("");
+       };
+    });
 })();
