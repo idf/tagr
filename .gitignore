@@ -245,6 +245,7 @@ target/
 #############
 ## Bower
 #############
+bower_components/
 tagr/rake_app/static/bower_components/
 
 #############

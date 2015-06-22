@@ -1,6 +1,6 @@
 {% load staticfiles %}  {# static template tag #}
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <!--the title -->
   <title>{% block title %}Base{% endblock %}</title>
@@ -16,7 +16,7 @@
   </block>
 
   <!-- css -->
-  <link type="text/css" href="{% static "bower_components/primer-css/css/primer.css" %}"/>
+  <link type="text/css" rel="stylesheet" href="{% static "bower_components/primer-css/css/primer.css" %}">
   <!-- additional css -->
   {% block additional_css %}
   {% endblock %}
