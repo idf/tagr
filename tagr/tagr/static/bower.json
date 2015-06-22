@@ -1,0 +1,26 @@
+{
+  "name": "tagr",
+  "version": "0.0.0",
+  "homepage": "https://github.com/idf/tagr",
+  "authors": [
+    "Daniel D. ZHANG <zhangdanyangg@gmail.com>"
+  ],
+  "description": "tag the document",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "tag"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "primer-css": "~2.2.1"
+  }
+}
