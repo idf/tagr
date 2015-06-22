@@ -1,0 +1,43 @@
+{% load staticfiles %}  {# static template tag #}
+<!DOCTYPE html>
+<html>
+<head>
+  <!--the title -->
+  <title>{% block title %}Base{% endblock %}</title>
+
+  <!-- block meta -->
+  <block meta>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tagging the document">
+    <meta name="keywords" content="Document Analysis, RAKE, Phrases">
+    <meta name="author" content="Daniel">
+    {% block additional_meta %}{% endblock %}
+  </block>
+
+  <!-- css -->
+  <link type="text/css" href="{% static "bower_components/primer-css/css/primer.css" %}"/>
+  <!-- additional css -->
+  {% block additional_css %}
+  {% endblock %}
+
+  <!--ajax-->
+
+
+</head>
+
+<!-- body -->
+<body>
+{% block body %}
+{% endblock %}
+</body>
+
+<!-- javascript-->
+<!-- jquery -->
+<script type="text/javascript" src=""></script>
+<!-- css -->
+<script type="text/javascript" src=""></script>
+{% block additional_js %}
+{% endblock %}
+
+</html>

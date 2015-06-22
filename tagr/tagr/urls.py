@@ -23,3 +23,4 @@ urlpatterns = [
     url(r'^$', rake_views.MainView.as_view()),
     url(r'^about/$', TemplateView.as_view(template_name="about.html"))
 ]
+
