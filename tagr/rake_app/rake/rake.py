@@ -6,9 +6,11 @@
 
 import re
 import operator
+import os
+
+BASE_DIR = (os.path.dirname(os.path.abspath(__file__)))
 
 debug = False
-test = True
 
 
 def is_number(s):
@@ -137,13 +139,13 @@ class Rake(object):
         return sorted_keywords
 
 
-if test:
+if __name__ == "__main__":
     text = "Compatibility of systems of linear constraints over the set of natural numbers. Criteria of compatibility of a system of linear Diophantine equations, strict inequations, and nonstrict inequations are considered. Upper bounds for components of a minimal set of solutions and algorithms of construction of minimal generating sets of solutions for all types of systems are given. These criteria and the corresponding algorithms for constructing a minimal supporting set of solutions can be used in solving all the considered types of systems and systems of mixed types."
 
     # Split text into sentences
     sentenceList = split_sentences(text)
     # stoppath = "FoxStoplist.txt" #Fox stoplist contains "numbers", so it will not find "natural numbers" like in Table 1.1
-    stoppath = "SmartStoplist.txt"  # SMART stoplist misses some of the lower-scoring keywords in Figure 1.5, which means that the top 1/3 cuts off one of the 4.0 score words in Table 1.1
+    stoppath = os.path.join(BASE_DIR, "SmartStoplist.txt")  # SMART stoplist misses some of the lower-scoring keywords in Figure 1.5, which means that the top 1/3 cuts off one of the 4.0 score words in Table 1.1
     stopwordpattern = build_stop_word_regex(stoppath)
 
     # generate candidate keywords
@@ -163,6 +165,6 @@ if test:
     if debug: print totalKeywords
     print sortedKeywords[0:(totalKeywords/3)]
 
-    rake = Rake("SmartStoplist.txt")
+    rake = Rake(stoppath)
     keywords = rake.run(text)
     print keywords
