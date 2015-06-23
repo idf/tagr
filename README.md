@@ -2,8 +2,14 @@
 Common utilities for JavaScript.  
 This is Noah's Ark for [Atwood's Law](http://blog.codinghorror.com/the-principle-of-least-power/): "any application that can be written in JavaScript, will eventually be written in JavaScript." :joy:
 
-
 ##Installations
+### As Git Subtree
+```
+git remote add -f util-js git@github.com:idf/commons-util-js.git
+git subtree add --prefix [dir/]util-js util-js develop --squash
+git subtree pull --prefix [dir/]util-js util-js develop --squash
+git subtree push --prefix [dir/]util-js util-js develop 
+```
 ###Common Utils for Everything
 ```html
 <script type="text/javascript" src="/js/commons-util-js/DomUtils.js"></script>
