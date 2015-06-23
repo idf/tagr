@@ -21,6 +21,7 @@
     "tests"
   ],
   "dependencies": {
-    "primer-css": "~2.2.1"
+    "primer-css": "~2.2.1",
+    "angular": "~1.4.1"
   }
 }
