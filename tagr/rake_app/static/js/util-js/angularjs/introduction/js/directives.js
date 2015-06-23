@@ -1,7 +1,7 @@
 /**
  * Created by Danyang on 2/3/2015.
  */
-(function(){
+(function() {
     "use strict";
     var app = angular.module('app.directives', []);
 

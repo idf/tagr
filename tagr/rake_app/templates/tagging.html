@@ -1,23 +1,26 @@
 {% extends "abstract/base.html" %}
 {% block title %}Tagr|Home{% endblock %}
 {% block mainbody %}
-  <div class="container">
-  <div class="columns">
-    <div class="three-fourths column centered">
-      <div class="columns">
-        <form>
-          <textarea class="input-block" type="text" rows="20"></textarea>
-          <div class="form-actions">
-            <button type="button" class="btn btn-primary">Submit</button>
-          </div>
-        </form>
-      </div>
-      <div class="columns">
-        <span class="state state-open">Open</span>
-        <span class="state state-proposed">Open</span>
-        <span class="state state-reopened">Open</span>
+  {# to escapte {{  }} #}
+  {% verbatim %}
+  <div class="container" ng-controller="TagrController as tagr">
+    <div class="columns">
+      <div class="three-fourths column centered">
+        <div class="columns">
+          <form>
+            <textarea class="input-block" type="text" rows="20">{{tagr.text}}</textarea>
+            <div class="form-actions">
+              <button type="button" class="btn btn-primary">Submit</button>
+            </div>
+          </form>
+        </div>
+        <div class="columns">
+          <span class="state state-open">Open</span>
+          <span class="state state-proposed">Open</span>
+          <span class="state state-reopened">Open</span>
+        </div>
       </div>
     </div>
-  </div>
   <div>
+  {% endverbatim %}
 {% endblock %}

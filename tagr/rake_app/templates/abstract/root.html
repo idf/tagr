@@ -1,6 +1,6 @@
 {% load staticfiles %}  {# static template tag #}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="app">
 <head>
   <!--the title -->
   <title>{% block title %}Base{% endblock %}</title>
@@ -34,6 +34,12 @@
 </body>
 
 <!-- javascript-->
+<!-- angular -->
+<script type="text/javascript" src="{% static "bower_components/angular/angular.min.js" %}"></script>
+<script type="text/javascript" src="{% static "js/util-js/angularjs/filters.js" %}"></script>
+<script type="text/javascript" src="{% static "js/directives.js" %}"></script>
+<script type="text/javascript" src="{% static "js/controllers.js" %}"></script>
+<script type="text/javascript" src="{% static "js/app.js" %}"></script>
 <!-- jquery -->
 <script type="text/javascript" src=""></script>
 <!-- css -->
