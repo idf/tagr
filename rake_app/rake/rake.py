@@ -41,7 +41,7 @@ def separate_words(text, min_word_return_size):
     @param text The text that must be split in to words.
     @param min_word_return_size The minimum no of characters a word must have to be included.
     """
-    splitter = re.compile('[^a-zA-Z0-9_\\+\\-/]')
+    splitter = re.compile(r'[^a-zA-Z0-9_\+\-/]')
     words = []
     for single_word in splitter.split(text):
         current_word = single_word.strip().lower()
@@ -56,7 +56,7 @@ def split_sentences(text):
     Utility function to return a list of sentences.
     @param text The text that must be split in to sentences.
     """
-    sentence_delimiters = re.compile(u'[.!?,;:\t\\\\"\\(\\)\\\'\u2019\u2013]|\\s\\-\\s')
+    sentence_delimiters = re.compile(r'[!\?;:\[\]\t\"\(\)]|\s\-\s|[^0-9],[^a-zA-Z0-9]|\.[^a-zA-Z0-9]|\.$')
     sentences = sentence_delimiters.split(text)
     return sentences
 
