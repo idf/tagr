@@ -8,15 +8,18 @@
       <div class="three-fourths column centered">
         <div class="columns">
           <form ng-submit="tagrCtrl.tag()" novalidate>
-            <textarea class="input-block" type="text" rows="20">{{ tagrCtrl.text }}</textarea>
+            <textarea class="input-block" type="text" rows="20" ng-model="tagrCtrl.text"></textarea>
             <div class="form-actions">
               <button type="submit" class="btn btn-primary" >Submit</button>
             </div>
           </form>
         </div>
         <div class="columns">
-          <div ng-repeat="keyword in tagrCtrl.keywords">
-            <span class="state state-open">{{ keyword }}</span>
+          <div ng-if="tagrCtrl.keywords">
+            <h3>Key phrases:</h3>
+            <span  ng-repeat="keyword in tagrCtrl.keywords">
+              <span class="state state-reopened">{{ keyword }}</span>
+            </span>
           </div>
         </div>
       </div>
