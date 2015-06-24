@@ -2,9 +2,8 @@
 Corpus-free auto tagging for text in any length. 
 
 # Design 
-* Django 
-* Main business logic does not rely on database
-* Single-page web app
+* AngularJS + Django 
+* Main logic is calculation rather than data storage. 
 * [RAKE Python](https://github.com/idf-archive/RAKE)
 
 # Quicksheet

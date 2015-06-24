@@ -3,21 +3,21 @@
 {% block mainbody %}
   {# to escapte {{  }} #}
   {% verbatim %}
-  <div class="container" ng-controller="TagrController as tagr">
+  <div class="container" ng-controller="TagrController as tagrCtrl">
     <div class="columns">
       <div class="three-fourths column centered">
         <div class="columns">
-          <form>
-            <textarea class="input-block" type="text" rows="20">{{tagr.text}}</textarea>
+          <form ng-submit="tagrCtrl.tag()" novalidate>
+            <textarea class="input-block" type="text" rows="20">{{ tagrCtrl.text }}</textarea>
             <div class="form-actions">
-              <button type="button" class="btn btn-primary">Submit</button>
+              <button type="submit" class="btn btn-primary" >Submit</button>
             </div>
           </form>
         </div>
         <div class="columns">
-          <span class="state state-open">Open</span>
-          <span class="state state-proposed">Open</span>
-          <span class="state state-reopened">Open</span>
+          <div ng-repeat="keyword in tagrCtrl.keywords">
+            <span class="state state-open">{{ keyword }}</span>
+          </div>
         </div>
       </div>
     </div>
