@@ -107,6 +107,8 @@ STATICFILES_DIRS = (
     '/var/www/static/',
 )
 
+STATIC_ROOT = 'staticfiles'
+
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'  # for deployment
 
 MEDIA_URL = 'media/'
