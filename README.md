@@ -4,11 +4,11 @@ Corpus-free auto tagging for text in any length. Web: http://tagr.deepreader.io/
 # Public API
 Post the document text to be analyzed to URL `/` in the json format of:
 ```json
-{text: "text"}
+{"text": "the document text to be analyzed"}
 ```
 The response json format is:
 ```json 
-{keywords: ["phrase1", "phrase2"]}
+{"keywords": ["phrase1", "phrase2"]}
 ```
 
 # Design 
