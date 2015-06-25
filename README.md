@@ -1,6 +1,16 @@
 # Tagr
 Corpus-free auto tagging for text in any length. Web: http://tagr.deepreader.io/
 
+# Public API
+Post the document text to be analyzed to URL `/` in the json format of:
+```json
+{text: "text"}
+```
+The response json format is:
+```json 
+{keywords: ["phrase1", "phrase2"]}
+```
+
 # Design 
 * AngularJS + Django 
 * Main logic is calculation rather than data storage.
