@@ -1,11 +1,7 @@
 /**
  * Created by Danyang on 2/3/2015.
  */
-<<<<<<< HEAD
 (function() {
-=======
-(function(){
->>>>>>> 10c2afe5165303e35f0b18329b7c843aea20116e
     "use strict";
     var app = angular.module('app.directives', []);
 
