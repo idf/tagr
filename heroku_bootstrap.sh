@@ -29,7 +29,7 @@ echo "=============BGN================="
 read -r -d '' VAR << EOM
 STATIC_ROOT = 'staticfiles'
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
-WSGI_APPLICATION = 'tagr.wsgi.application'
+WSGI_APPLICATION = '$app.wsgi.application'
 ALLOWED_HOSTS = ["*"]
 EOM
 echo "$VAR"
