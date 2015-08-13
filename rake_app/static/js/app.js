@@ -12,7 +12,7 @@
         /* Shared Modules */
         'filters',
 
-        /* Feature ares */
+        /* Feature areas */
         'app.controllers',
         'app.directives'
     ]);
